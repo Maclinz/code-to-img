@@ -24,6 +24,17 @@ export default function Home() {
     const editorElem = editorRef.current;
 
     if (editorElem) {
+      //hide elemnets
+      const handleElems = document.querySelectorAll(".handle") as any;
+      const cursorElem = document.querySelector(".ace_cursor") as any;
+      const codetitle = document.querySelector(".code-title") as any;
+
+      handleElems.forEach((elem: any) => {
+        elem.style.display = "none";
+      });
+      cursorElem.style.display = "none";
+      codetitle.style.boxShadow = "none";
+
       const canvas = await html2canvas(editorElem);
       const image = canvas
         .toDataURL("image/png")
@@ -33,6 +44,13 @@ export default function Home() {
       link.download = "code.png";
       link.href = image;
       link.click();
+
+      //show elements
+      handleElems.forEach((elem: any) => {
+        elem.style.display = "block";
+      });
+      cursorElem.style.display = "block";
+      codetitle.style.boxShadow = "0 3px 10px rgba(0, 0, 0, 0.2)";
     }
   };
 

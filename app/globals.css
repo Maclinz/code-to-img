@@ -12,7 +12,7 @@ body {
   border-top-right-radius: 0.5rem;
   border: 2px solid rgba(249, 249, 249, 0.08);
 
-  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important; */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .ace-editor-container {
@@ -67,4 +67,28 @@ body {
   background-color: #191919;
   border: 1px solid #3c3c3c;
   border-radius: 3px;
+}
+
+.handle {
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
+}
+
+.handle-top,
+.handle-bottom {
+  transform: translateX(-50%) scale(1);
+  transition: all 0.4s ease-in-out;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.resize-container:hover .handle-left {
+  transform: translateY(-50%) scale(1.3);
+  background: rgb(248 250 252);
+  transition: all 0.4s ease-in-out;
+}
+.resize-container:hover .handle-right {
+  transform: translateY(-50%) scale(1.3);
+  background: rgb(248 250 252);
+  transition: all 0.4s ease-in-out;
 }
