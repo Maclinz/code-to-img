@@ -113,6 +113,9 @@ function CodeEditor({
               onChange={(e) => setTitle(e.target.value)}
               className="w-full text-[hsla(0,0%,100%,.6)]  outline-none font-medium 
                 text-center bg-transparent"
+              style={{
+                lineHeight: "1.8rem",
+              }}
             />
           </div>
 
