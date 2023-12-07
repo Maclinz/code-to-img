@@ -27,7 +27,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  /* box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2); */
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
 
   border: 2px solid rgba(249, 249, 249, 0.08);
   border-top: none;

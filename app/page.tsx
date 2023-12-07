@@ -28,12 +28,14 @@ export default function Home() {
       const handleElems = document.querySelectorAll(".handle") as any;
       const cursorElem = document.querySelector(".ace_cursor") as any;
       const codetitle = document.querySelector(".code-title") as any;
+      const codeEditor = document.querySelector(".ace_editor") as any;
 
       handleElems.forEach((elem: any) => {
         elem.style.display = "none";
       });
       cursorElem.style.display = "none";
       codetitle.style.boxShadow = "none";
+      codeEditor.style.boxShadow = "none";
 
       const canvas = await html2canvas(editorElem);
       const image = canvas
@@ -51,6 +53,7 @@ export default function Home() {
       });
       cursorElem.style.display = "block";
       codetitle.style.boxShadow = "0 3px 10px rgba(0, 0, 0, 0.2)";
+      codeEditor.style.boxShadow = "2px 3px 10px rgba(0, 0, 0, 0.2)";
     }
   };
 
