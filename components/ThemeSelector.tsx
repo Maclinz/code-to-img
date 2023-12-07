@@ -18,8 +18,6 @@ function ThemeSelector({ theme, setTheme }: ThemeSelectorProps) {
 
   const handleThemeChange = (newTheme: string) => {
     setTheme(newTheme);
-
-    console.log(newTheme);
   };
 
   return (
