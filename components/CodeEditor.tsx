@@ -15,7 +15,7 @@ import "ace-builds/src-noconflict/mode-typescript";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-terminal";
 import "ace-builds/src-noconflict/theme-twilight";
-import { initialCode } from "@/utils/utilities";
+import { extension, initialCode } from "@/utils/utilities";
 
 interface CodeEditorProps {
   language: string;
@@ -34,7 +34,7 @@ function CodeEditor({
 }: CodeEditorProps) {
   const [width, setWidth] = React.useState(1000);
   const [height, setHeight] = React.useState<number | null>(500);
-  const [title, setTitle] = React.useState("Untitled-1");
+  const [title, setTitle] = React.useState("App");
   const [code, setCode] = React.useState(initialCode);
 
   const handleCodeChange = (newCode: string) => {
@@ -109,7 +109,7 @@ function CodeEditor({
           <div className="input-contol w-full">
             <input
               type="text"
-              value={title}
+              value={title + extension(language)}
               onChange={(e) => setTitle(e.target.value)}
               className="w-full text-[hsla(0,0%,100%,.6)]  outline-none font-medium 
                 text-center bg-transparent"

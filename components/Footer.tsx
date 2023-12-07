@@ -13,7 +13,7 @@ function Footer() {
         Subscribe Here &nbsp;&#129109;
       </Link>
       <Link
-        href="/about"
+        href="https://thecodedealer.com"
         className="flex items-center text-sm font-medium hover:text-slate-200 ease-in-out transition-all duration-500"
       >
         <span className="pr-2">Made by</span>
@@ -21,7 +21,7 @@ function Footer() {
         <span className="pl-1 font-medium text-slate-200">TheCodeDealer</span>
       </Link>
       <Link
-        href="/about"
+        href="https://github.com/Maclinz/code-to-img"
         className="flex items-center text-sm font-medium hover:text-slate-200 ease-in-out transition-all duration-500"
       >
         Source Code Here &nbsp;&#129109;
