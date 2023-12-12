@@ -15,7 +15,7 @@ import "ace-builds/src-noconflict/mode-typescript";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-terminal";
 import "ace-builds/src-noconflict/theme-twilight";
-import { extension, initialCode } from "@/utils/utilities";
+import { getExtension, initialCode } from "@/utils/utilities";
 
 interface CodeEditorProps {
   language: string;
@@ -37,8 +37,21 @@ function CodeEditor({
   const [title, setTitle] = React.useState("App");
   const [code, setCode] = React.useState(initialCode);
 
+  const [extension, setExtension] = React.useState(".js");
+
+  useEffect(() => {
+    // Update the extension when the language changes
+    setExtension(getExtension(language));
+  }, [language]);
+
   const handleCodeChange = (newCode: string) => {
     setCode(newCode);
+  };
+
+  const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Extract the title without the extension
+    const newTitle = e.target.value.split(".")[0];
+    setTitle(newTitle);
   };
 
   // @ts-ignore
@@ -109,8 +122,8 @@ function CodeEditor({
           <div className="input-contol w-full">
             <input
               type="text"
-              value={title + extension(language)}
-              onChange={(e) => setTitle(e.target.value)}
+              value={`${title}${extension}`}
+              onChange={(e) => handleTitleChange(e)}
               className="w-full text-[hsla(0,0%,100%,.6)]  outline-none font-medium 
                 text-center bg-transparent"
               style={{

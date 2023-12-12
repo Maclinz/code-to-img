@@ -25,7 +25,7 @@ export const languages = [
   },
 ];
 
-export const extension = (language: string) => {
+export const getExtension = (language: string) => {
   switch (language) {
     case "JavaScript":
       return ".js";
