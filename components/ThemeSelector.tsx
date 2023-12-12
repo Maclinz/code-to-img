@@ -24,7 +24,7 @@ function ThemeSelector({ theme, setTheme }: ThemeSelectorProps) {
     <OutsideClickHandler onOutsideClick={() => setShowDropdown(false)}>
       <div className="theme-selector" onClick={toggleDropdown}>
         <p className="py-[5px] text-sm font-medium">Code Colors</p>
-        <div className="dropdown-title capitalize w-[120px]">
+        <div className="dropdown-title capitalize w-[120px] hover:text-slate-50 transition-all duration-300 ease-in-out">
           {theme} <ChevronDown />
         </div>
         {showDropdown && (
@@ -34,7 +34,7 @@ function ThemeSelector({ theme, setTheme }: ThemeSelectorProps) {
                 <button
                   key={i}
                   onClick={() => handleThemeChange(theme)}
-                  className=" capitalize text-left"
+                  className=" capitalize text-left hover:text-slate-50 transition-all duration-300 ease-in-out"
                 >
                   {theme}
                 </button>

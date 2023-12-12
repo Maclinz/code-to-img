@@ -36,7 +36,7 @@ function LanguageSelector({
     <OutsideClickHandler onOutsideClick={() => setShowDropdown(false)}>
       <div onClick={toggleDropdown}>
         <p className="py-[5px] text-sm font-medium">Language</p>
-        <div className="dropdown-title capitalize w-[120px]">
+        <div className="dropdown-title capitalize w-[120px] hover:text-slate-50 transition-all duration-300 ease-in-out">
           {language}
           <ChevronDown />
         </div>
@@ -47,7 +47,7 @@ function LanguageSelector({
               return (
                 <div key={i}>
                   <button
-                    className="dropdown-item text-left"
+                    className="dropdown-item text-left hover:text-slate-50 transition-all duration-300 ease-in-out"
                     onClick={() => handleLanguageChange(lang.name)}
                   >
                     {lang.name}
